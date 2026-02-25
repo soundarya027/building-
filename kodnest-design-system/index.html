@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KodNest Premium Build System</title>
+  <link rel="stylesheet" href="css/design-tokens.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+</head>
+<body>
+  <div class="kn-app">
+    <!-- ============================================
+         TOP BAR
+         Left: Project name | Center: Progress | Right: Status
+         ============================================ -->
+    <header class="kn-top-bar">
+      <div class="kn-top-bar__project">
+        <svg class="kn-top-bar__project-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+        </svg>
+        <span>KodNest Premium</span>
+      </div>
+      
+      <div class="kn-top-bar__progress">
+        <div class="kn-progress">
+          <div class="kn-progress__steps">
+            <div class="kn-progress__step kn-progress__step--completed"></div>
+            <div class="kn-progress__step kn-progress__step--completed"></div>
+            <div class="kn-progress__step kn-progress__step--current"></div>
+            <div class="kn-progress__step"></div>
+            <div class="kn-progress__step"></div>
+          </div>
+          <span>Step <span class="kn-progress__label">3</span> / 5</span>
+        </div>
+      </div>
+      
+      <div class="kn-top-bar__status">
+        <span class="kn-badge kn-badge--in-progress">
+          <span class="kn-badge__dot"></span>
+          In Progress
+        </span>
+      </div>
+    </header>
+
+    <!-- ============================================
+         CONTEXT HEADER
+         Large serif headline, 1-line subtext
+         ============================================ -->
+    <div class="kn-context-header">
+      <div class="kn-context-header__content">
+        <h1 class="kn-context-header__title">Build Authentication Flow</h1>
+        <p class="kn-context-header__subtitle">Implement secure user login with email verification and password reset functionality.</p>
+      </div>
+    </div>
+
+    <!-- ============================================
+         MAIN CONTENT
+         Primary Workspace (70%) + Secondary Panel (30%)
+         ============================================ -->
+    <main class="kn-main">
+      <!-- PRIMARY WORKSPACE -->
+      <div class="kn-workspace">
+        <!-- Section 1: Requirements -->
+        <section class="kn-workspace__section">
+          <div class="kn-workspace__section-header">
+            <h2 class="kn-workspace__section-title">Requirements</h2>
+            <button class="kn-button kn-button--secondary kn-button--sm">Edit</button>
+          </div>
+          <div class="kn-workspace__content">
+            <ul>
+              <li>Email and password login form with validation</li>
+              <li>Password reset flow with email verification</li>
+              <li>Session management with secure tokens</li>
+              <li>Error handling for invalid credentials</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Section 2: Design Mockups -->
+        <section class="kn-workspace__section">
+          <div class="kn-workspace__section-header">
+            <h2 class="kn-workspace__section-title">Design Mockups</h2>
+            <button class="kn-button kn-button--secondary kn-button--sm">View All</button>
+          </div>
+          <div class="kn-workspace__content">
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: var(--space-2);">
+              <div class="kn-card" style="aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; color: var(--color-text-tertiary);">
+                <span>Login Screen</span>
+              </div>
+              <div class="kn-card" style="aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; color: var(--color-text-tertiary);">
+                <span>Reset Password</span>
+              </div>
+              <div class="kn-card" style="aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; color: var(--color-text-tertiary);">
+                <span>Email Sent</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 3: Implementation Notes -->
+        <section class="kn-workspace__section">
+          <div class="kn-workspace__section-header">
+            <h2 class="kn-workspace__section-title">Implementation Notes</h2>
+          </div>
+          <div class="kn-workspace__content">
+            <p>Use the existing Button and Input components from the design system. Ensure all form fields have proper validation states. The password reset flow should redirect to a confirmation page after email submission.</p>
+            <div class="kn-error-state" style="margin-top: var(--space-3);">
+              <div class="kn-error-state__title">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/>
+                  <line x1="12" y1="8" x2="12" y2="12"/>
+                  <line x1="12" y1="16" x2="12.01" y2="16"/>
+                </svg>
+                Important Consideration
+              </div>
+              <p class="kn-error-state__message">Rate limiting must be implemented on the password reset endpoint to prevent abuse.</p>
+              <a href="#" class="kn-error-state__action">View security guidelines →</a>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- SECONDARY PANEL -->
+      <aside class="kn-secondary-panel">
+        <!-- Step Explanation -->
+        <div class="kn-secondary-panel__section">
+          <h3 class="kn-secondary-panel__title">Current Step</h3>
+          <p class="kn-secondary-panel__explanation">
+            Build the login form component with email validation and error states. Use the provided design tokens for consistent styling.
+          </p>
+        </div>
+
+        <!-- Prompt Box -->
+        <div class="kn-secondary-panel__section">
+          <h3 class="kn-secondary-panel__title">Build Prompt</h3>
+          <div class="kn-secondary-panel__prompt-box">
+            <div class="kn-secondary-panel__prompt-content">Create a login form with email and password fields. Include validation for email format and minimum password length. Add error messaging for invalid credentials. Style using the KodNest design system with deep red accent color (#8B0000) for the primary button.</div>
+          </div>
+          <div class="kn-secondary-panel__actions">
+            <button class="kn-button kn-button--secondary kn-button--sm">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 4px;">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+              </svg>
+              Copy
+            </button>
+            <button class="kn-button kn-button--primary kn-button--sm">Build in Lovable</button>
+          </div>
+        </div>
+
+        <!-- Feedback Actions -->
+        <div class="kn-secondary-panel__section">
+          <h3 class="kn-secondary-panel__title">Feedback</h3>
+          <div class="kn-secondary-panel__actions kn-secondary-panel__actions--vertical">
+            <button class="kn-button kn-button--success">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 6px;">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              It Worked
+            </button>
+            <button class="kn-button kn-button--secondary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 6px;">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="8" x2="12" y2="12"/>
+                <line x1="12" y1="16" x2="12.01" y2="16"/>
+              </svg>
+              Report Error
+            </button>
+            <button class="kn-button kn-button--ghost">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 6px;">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                <circle cx="8.5" cy="8.5" r="1.5"/>
+                <polyline points="21 15 16 10 5 21"/>
+              </svg>
+              Add Screenshot
+            </button>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <!-- ============================================
+         PROOF FOOTER
+         Checklist: UI Built | Logic Working | Test Passed | Deployed
+         ============================================ -->
+    <footer class="kn-proof-footer">
+      <div class="kn-proof-footer__content">
+        <h3 class="kn-proof-footer__title">Completion Checklist</h3>
+        <div class="kn-proof-footer__checklist">
+          <div class="kn-proof-item">
+            <label class="kn-proof-item__checkbox">
+              <input type="checkbox" class="kn-checkbox__input">
+              <span class="kn-proof-item__label">UI Built</span>
+            </label>
+            <input type="text" class="kn-input kn-proof-item__input" placeholder="Commit hash or screenshot link...">
+          </div>
+          
+          <div class="kn-proof-item">
+            <label class="kn-proof-item__checkbox">
+              <input type="checkbox" class="kn-checkbox__input">
+              <span class="kn-proof-item__label">Logic Working</span>
+            </label>
+            <input type="text" class="kn-input kn-proof-item__input" placeholder="Test results or notes...">
+          </div>
+          
+          <div class="kn-proof-item">
+            <label class="kn-proof-item__checkbox">
+              <input type="checkbox" class="kn-checkbox__input">
+              <span class="kn-proof-item__label">Test Passed</span>
+            </label>
+            <input type="text" class="kn-input kn-proof-item__input" placeholder="Test run ID or link...">
+          </div>
+          
+          <div class="kn-proof-item">
+            <label class="kn-proof-item__checkbox">
+              <input type="checkbox" class="kn-checkbox__input">
+              <span class="kn-proof-item__label">Deployed</span>
+            </label>
+            <input type="text" class="kn-input kn-proof-item__input" placeholder="Deployment URL...">
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

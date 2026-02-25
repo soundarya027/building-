@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Component Library - KodNest Premium Build System</title>
+  <link rel="stylesheet" href="../css/design-tokens.css">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <style>
+    .component-section {
+      margin-bottom: var(--space-5);
+      padding-bottom: var(--space-4);
+      border-bottom: 1px solid var(--color-border);
+    }
+    .component-section:last-child {
+      border-bottom: none;
+    }
+    .component-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: var(--space-2);
+      margin-top: var(--space-2);
+    }
+    .color-swatch {
+      padding: var(--space-2);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-border);
+    }
+    .color-swatch__preview {
+      height: 60px;
+      border-radius: var(--radius-sm);
+      margin-bottom: var(--space-1);
+    }
+    .color-swatch__name {
+      font-size: var(--text-sm);
+      font-weight: var(--font-medium);
+      color: var(--color-text-primary);
+    }
+    .color-swatch__value {
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      color: var(--color-text-tertiary);
+    }
+  </style>
+</head>
+<body>
+  <div class="kn-app">
+    <!-- TOP BAR -->
+    <header class="kn-top-bar">
+      <div class="kn-top-bar__project">
+        <svg class="kn-top-bar__project-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+        </svg>
+        <span>KodNest Premium</span>
+      </div>
+      <div class="kn-top-bar__progress">
+        <span style="color: var(--color-text-tertiary); font-size: var(--text-sm);">Component Library</span>
+      </div>
+      <div class="kn-top-bar__status">
+        <a href="../index.html" class="kn-button kn-button--secondary kn-button--sm">View Demo</a>
+      </div>
+    </header>
+
+    <!-- CONTEXT HEADER -->
+    <div class="kn-context-header">
+      <div class="kn-context-header__content">
+        <h1 class="kn-context-header__title">Design System Components</h1>
+        <p class="kn-context-header__subtitle">A comprehensive reference for all UI components, tokens, and patterns.</p>
+      </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main class="kn-main" style="display: block; max-width: 1000px;">
+      <!-- COLOR SYSTEM -->
+      <section class="component-section">
+        <h2>Color System</h2>
+        <p>Maximum 4 colors across the entire system. Calm, intentional, professional.</p>
+        
+        <h3 style="margin-top: var(--space-3); font-size: var(--text-lg);">Background Colors</h3>
+        <div class="component-grid">
+          <div class="color-swatch">
+            <div class="color-swatch__preview" style="background-color: #F7F6F3;"></div>
+            <div class="color-swatch__name">Background</div>
+            <div class="color-swatch__value">#F7F6F3</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-swatch__preview" style="background-color: #FFFFFF; border: 1px solid var(--color-border);"></div>
+            <div class="color-swatch__name">Elevated</div>
+            <div class="color-swatch__value">#FFFFFF</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-swatch__preview" style="background-color: #EFEDE8;"></div>
+            <div class="color-swatch__name">Subtle</div>
+            <div class="color-swatch__value">#EFEDE8</div>
+          </div>
+        </div>
+
+        <h3 style="margin-top: var(--space-3); font-size: var(--text-lg);">Text Colors</h3>
+        <div class="component-grid">
+          <div class="color-swatch">
+            <div class="color-swatch__preview" style="background-color: #111111;"></div>
+            <div class="color-swatch__name">Primary</div>
+            <div class="color-swatch__value">#111111</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-swatch__preview" style="background-color: #555555;"></div>
+            <div class="color-swatch__name">Secondary</div>
+            <div class="color-swatch__value">#555555</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-swatch__preview" style="background-color: #888888;"></div>
+            <div class="color-swatch__name">Tertiary</div>
+            <div class="color-swatch__value">#888888</div>
+          </div>
+        </div>
+
+        <h3 style="margin-top: var(--space-3); font-size: var(--text-lg);">Accent & Semantic</h3>
+        <div class="component-grid">
+          <div class="color-swatch">
+            <div class="color-swatch__preview" style="background-color: #8B0000;"></div>
+            <div class="color-swatch__name">Accent (Deep Red)</div>
+            <div class="color-swatch__value">#8B0000</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-swatch__preview" style="background-color: #4A7C59;"></div>
+            <div class="color-swatch__name">Success</div>
+            <div class="color-swatch__value">#4A7C59</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-swatch__preview" style="background-color: #B8860B;"></div>
+            <div class="color-swatch__name">Warning</div>
+            <div class="color-swatch__value">#B8860B</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TYPOGRAPHY -->
+      <section class="component-section">
+        <h2>Typography</h2>
+        <p>Serif headings for confidence, sans-serif body for clarity.</p>
+        
+        <div style="margin-top: var(--space-3);">
+          <h1>Heading 1 - Georgia, 48px</h1>
+          <h2>Heading 2 - Georgia, 40px</h2>
+          <h3>Heading 3 - Georgia, 32px</h3>
+          <h4>Heading 4 - Georgia, 24px</h4>
+          <p style="margin-top: var(--space-2);">Body text - System sans-serif, 16px, line-height 1.6-1.8. Maximum 720px width for optimal readability. The quick brown fox jumps over the lazy dog.</p>
+          <p class="text-sm" style="margin-top: var(--space-1);">Small text - 14px, used for labels and secondary information.</p>
+          <p class="text-xs" style="margin-top: var(--space-1);">Extra small - 12px, used for captions and metadata.</p>
+        </div>
+      </section>
+
+      <!-- BUTTONS -->
+      <section class="component-section">
+        <h2>Buttons</h2>
+        <p>Primary = solid deep red, Secondary = outlined. Same hover effect and border radius everywhere.</p>
+        
+        <div style="margin-top: var(--space-3); display: flex; flex-wrap: wrap; gap: var(--space-2); align-items: center;">
+          <button class="kn-button kn-button--primary">Primary Button</button>
+          <button class="kn-button kn-button--secondary">Secondary Button</button>
+          <button class="kn-button kn-button--ghost">Ghost Button</button>
+          <button class="kn-button kn-button--success">Success Button</button>
+        </div>
+        
+        <div style="margin-top: var(--space-2); display: flex; flex-wrap: wrap; gap: var(--space-2); align-items: center;">
+          <button class="kn-button kn-button--primary kn-button--sm">Small</button>
+          <button class="kn-button kn-button--secondary kn-button--sm">Small</button>
+          <button class="kn-button kn-button--primary kn-button--lg">Large Button</button>
+          <button class="kn-button kn-button--primary" disabled>Disabled</button>
+        </div>
+      </section>
+
+      <!-- CARDS -->
+      <section class="component-section">
+        <h2>Cards</h2>
+        <p>Subtle border, no drop shadows, balanced padding.</p>
+        
+        <div class="component-grid" style="margin-top: var(--space-3);">
+          <div class="kn-card">
+            <h4 style="margin-bottom: var(--space-1);">Standard Card</h4>
+            <p class="text-sm">Cards use subtle borders and no drop shadows. Clean and professional.</p>
+          </div>
+          
+          <div class="kn-card kn-card--interactive" tabindex="0">
+            <h4 style="margin-bottom: var(--space-1);">Interactive Card</h4>
+            <p class="text-sm">This card is focusable and has hover states for interactivity.</p>
+          </div>
+          
+          <div class="kn-card">
+            <div class="kn-card__header">
+              <span class="text-sm font-semibold">Card with Header</span>
+            </div>
+            <p class="text-sm">Cards can have headers and footers for structured content.</p>
+            <div class="kn-card__footer">
+              <span class="text-xs text-tertiary">Footer content</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- INPUTS -->
+      <section class="component-section">
+        <h2>Inputs</h2>
+        <p>Clean borders, no heavy shadows, clear focus state.</p>
+        
+        <div style="margin-top: var(--space-3); max-width: 400px; display: flex; flex-direction: column; gap: var(--space-2);">
+          <input type="text" class="kn-input" placeholder="Standard input field...">
+          <input type="text" class="kn-input" value="Input with value">
+          <input type="text" class="kn-input kn-input--error" placeholder="Error state...">
+          <input type="text" class="kn-input" placeholder="Disabled input" disabled>
+          <textarea class="kn-input kn-textarea" placeholder="Textarea for longer content..."></textarea>
+        </div>
+      </section>
+
+      <!-- BADGES -->
+      <section class="component-section">
+        <h2>Status Badges</h2>
+        <p>Clear status indicators with consistent styling.</p>
+        
+        <div style="margin-top: var(--space-3); display: flex; flex-wrap: wrap; gap: var(--space-2);">
+          <span class="kn-badge kn-badge--not-started">
+            <span class="kn-badge__dot"></span>
+            Not Started
+          </span>
+          <span class="kn-badge kn-badge--in-progress">
+            <span class="kn-badge__dot"></span>
+            In Progress
+          </span>
+          <span class="kn-badge kn-badge--shipped">
+            <span class="kn-badge__dot"></span>
+            Shipped
+          </span>
+          <span class="kn-badge kn-badge--error">
+            <span class="kn-badge__dot"></span>
+            Error
+          </span>
+        </div>
+      </section>
+
+      <!-- PROGRESS -->
+      <section class="component-section">
+        <h2>Progress Indicator</h2>
+        <p>Step-based progress for multi-stage workflows.</p>
+        
+        <div style="margin-top: var(--space-3);">
+          <div class="kn-progress">
+            <div class="kn-progress__steps">
+              <div class="kn-progress__step kn-progress__step--completed"></div>
+              <div class="kn-progress__step kn-progress__step--completed"></div>
+              <div class="kn-progress__step kn-progress__step--current"></div>
+              <div class="kn-progress__step"></div>
+              <div class="kn-progress__step"></div>
+            </div>
+            <span>Step <span class="kn-progress__label">3</span> / 5</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHECKBOXES -->
+      <section class="component-section">
+        <h2>Checkboxes</h2>
+        <p>Used in the Proof Footer for completion tracking.</p>
+        
+        <div style="margin-top: var(--space-3); display: flex; flex-direction: column; gap: var(--space-2);">
+          <label class="kn-checkbox">
+            <input type="checkbox" class="kn-checkbox__input">
+            <span class="kn-checkbox__label">Unchecked item</span>
+          </label>
+          <label class="kn-checkbox">
+            <input type="checkbox" class="kn-checkbox__input" checked>
+            <span class="kn-checkbox__label">Checked item</span>
+          </label>
+        </div>
+      </section>
+
+      <!-- EMPTY STATE -->
+      <section class="component-section">
+        <h2>Empty State</h2>
+        <p>Provides next action, never feels dead.</p>
+        
+        <div class="kn-empty-state" style="border: 1px solid var(--color-border); border-radius: var(--radius-lg); margin-top: var(--space-3);">
+          <svg class="kn-empty-state__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M9 13h6m-3-3v6m-9 1V7a2 2 0 0 1 2-2h6l2 2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          </svg>
+          <h3 class="kn-empty-state__title">No projects yet</h3>
+          <p class="kn-empty-state__description">Create your first project to start building with KodNest Premium.</p>
+          <button class="kn-button kn-button--primary">Create Project</button>
+        </div>
+      </section>
+
+      <!-- ERROR STATE -->
+      <section class="component-section">
+        <h2>Error State</h2>
+        <p>Explains what went wrong + how to fix, never blames user.</p>
+        
+        <div class="kn-error-state" style="margin-top: var(--space-3);">
+          <div class="kn-error-state__title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="8" x2="12" y2="12"/>
+              <line x1="12" y1="16" x2="12.01" y2="16"/>
+            </svg>
+            Connection failed
+          </div>
+          <p class="kn-error-state__message">Unable to connect to the build server. Please check your network connection and try again.</p>
+          <a href="#" class="kn-error-state__action">Retry connection →</a>
+        </div>
+      </section>
+
+      <!-- SPACING SCALE -->
+      <section class="component-section">
+        <h2>Spacing Scale</h2>
+        <p>Consistent spacing: 8px, 16px, 24px, 40px, 64px. Never use random values.</p>
+        
+        <div style="margin-top: var(--space-3);">
+          <div style="display: flex; align-items: center; gap: var(--space-2); margin-bottom: var(--space-1);">
+            <div style="width: 8px; height: 8px; background-color: var(--color-accent);"></div>
+            <code class="text-sm">--space-1: 8px</code>
+          </div>
+          <div style="display: flex; align-items: center; gap: var(--space-2); margin-bottom: var(--space-1);">
+            <div style="width: 16px; height: 16px; background-color: var(--color-accent);"></div>
+            <code class="text-sm">--space-2: 16px</code>
+          </div>
+          <div style="display: flex; align-items: center; gap: var(--space-2); margin-bottom: var(--space-1);">
+            <div style="width: 24px; height: 24px; background-color: var(--color-accent);"></div>
+            <code class="text-sm">--space-3: 24px</code>
+          </div>
+          <div style="display: flex; align-items: center; gap: var(--space-2); margin-bottom: var(--space-1);">
+            <div style="width: 40px; height: 40px; background-color: var(--color-accent);"></div>
+            <code class="text-sm">--space-4: 40px</code>
+          </div>
+          <div style="display: flex; align-items: center; gap: var(--space-2);">
+            <div style="width: 64px; height: 64px; background-color: var(--color-accent);"></div>
+            <code class="text-sm">--space-5: 64px</code>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="../js/app.js"></script>
+</body>
+</html>

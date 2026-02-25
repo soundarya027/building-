@@ -1,0 +1,361 @@
+/**
+ * KodNest Premium Build System
+ * Layout Components
+ * 
+ * Global Layout Structure:
+ * [Top Bar] → [Context Header] → [Primary Workspace + Secondary Panel] → [Proof Footer]
+ */
+
+@import url('design-tokens.css');
+
+/* ============================================
+   APP CONTAINER
+   Full-height layout wrapper
+   ============================================ */
+
+.kn-app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--color-background);
+}
+
+/* ============================================
+   TOP BAR
+   - Left: Project name
+   - Center: Progress indicator (Step X / Y)
+   - Right: Status badge (Not Started / In Progress / Shipped)
+   ============================================ */
+
+.kn-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+  padding: 0 var(--space-3);
+  background-color: var(--color-background-elevated);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+}
+
+.kn-top-bar__project {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-primary);
+  min-width: 200px;
+}
+
+.kn-top-bar__project-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--color-accent);
+}
+
+.kn-top-bar__progress {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.kn-top-bar__status {
+  min-width: 200px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* ============================================
+   CONTEXT HEADER
+   - Large serif headline
+   - 1-line subtext
+   - Clear purpose, no hype language
+   ============================================ */
+
+.kn-context-header {
+  padding: var(--space-4) var(--space-3);
+  background-color: var(--color-background);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.kn-context-header__content {
+  max-width: var(--max-width-container);
+  margin: 0 auto;
+}
+
+.kn-context-header__title {
+  font-family: var(--font-serif);
+  font-size: var(--text-3xl);
+  font-weight: var(--font-normal);
+  color: var(--color-text-primary);
+  line-height: var(--leading-tight);
+  margin-bottom: var(--space-1);
+  letter-spacing: var(--tracking-tight);
+}
+
+.kn-context-header__subtitle {
+  font-family: var(--font-sans);
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-normal);
+  max-width: var(--max-width-text);
+}
+
+/* ============================================
+   MAIN CONTENT AREA
+   Split layout: Primary Workspace (70%) + Secondary Panel (30%)
+   ============================================ */
+
+.kn-main {
+  flex: 1;
+  display: flex;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  max-width: var(--max-width-container);
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ============================================
+   PRIMARY WORKSPACE (70% width)
+   Where the main product interaction happens
+   Clean cards, predictable components, no crowding
+   ============================================ */
+
+.kn-workspace {
+  flex: 0 0 70%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+.kn-workspace__section {
+  background-color: var(--color-background-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3);
+}
+
+.kn-workspace__section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-2);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.kn-workspace__section-title {
+  font-family: var(--font-sans);
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-primary);
+}
+
+.kn-workspace__content {
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+}
+
+/* ============================================
+   SECONDARY PANEL (30% width)
+   - Step explanation (short)
+   - Copyable prompt box
+   - Buttons: Copy, Build in Lovable, It Worked, Error, Add Screenshot
+   - Calm styling
+   ============================================ */
+
+.kn-secondary-panel {
+  flex: 0 0 30%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-width: 280px;
+  max-width: 380px;
+}
+
+.kn-secondary-panel__section {
+  background-color: var(--color-background-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3);
+}
+
+.kn-secondary-panel__title {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  color: var(--color-text-tertiary);
+  margin-bottom: var(--space-2);
+}
+
+.kn-secondary-panel__explanation {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-normal);
+  margin-bottom: var(--space-2);
+}
+
+.kn-secondary-panel__prompt-box {
+  background-color: var(--color-background-subtle);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.kn-secondary-panel__prompt-content {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-normal);
+  max-height: 200px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.kn-secondary-panel__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+}
+
+.kn-secondary-panel__actions--vertical {
+  flex-direction: column;
+}
+
+/* ============================================
+   PROOF FOOTER (persistent bottom section)
+   Checklist style: □ UI Built □ Logic Working □ Test Passed □ Deployed
+   Each checkbox requires user proof input.
+   ============================================ */
+
+.kn-proof-footer {
+  background-color: var(--color-background-elevated);
+  border-top: 1px solid var(--color-border);
+  padding: var(--space-3);
+  margin-top: auto;
+}
+
+.kn-proof-footer__content {
+  max-width: var(--max-width-container);
+  margin: 0 auto;
+}
+
+.kn-proof-footer__title {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  color: var(--color-text-tertiary);
+  margin-bottom: var(--space-2);
+}
+
+.kn-proof-footer__checklist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3) var(--space-4);
+}
+
+.kn-proof-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 200px;
+}
+
+.kn-proof-item__checkbox {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.kn-proof-item__label {
+  font-size: var(--text-base);
+  font-weight: var(--font-medium);
+  color: var(--color-text-primary);
+}
+
+.kn-proof-item__input {
+  font-size: var(--text-sm);
+  padding: 6px 10px;
+  margin-left: 26px;
+  width: calc(100% - 26px);
+}
+
+.kn-proof-item__input::placeholder {
+  color: var(--color-text-tertiary);
+}
+
+.kn-proof-item--completed .kn-proof-item__label {
+  color: var(--color-success);
+  text-decoration: line-through;
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .kn-main {
+    flex-direction: column;
+  }
+  
+  .kn-workspace {
+    flex: 1;
+    width: 100%;
+  }
+  
+  .kn-secondary-panel {
+    flex: 1;
+    width: 100%;
+    max-width: none;
+    min-width: auto;
+  }
+  
+  .kn-top-bar__progress {
+    display: none;
+  }
+  
+  .kn-top-bar__project,
+  .kn-top-bar__status {
+    min-width: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .kn-context-header {
+    padding: var(--space-3) var(--space-2);
+  }
+  
+  .kn-context-header__title {
+    font-size: var(--text-2xl);
+  }
+  
+  .kn-context-header__subtitle {
+    font-size: var(--text-base);
+  }
+  
+  .kn-main {
+    padding: var(--space-2);
+  }
+  
+  .kn-proof-footer__checklist {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+  
+  .kn-proof-item {
+    min-width: auto;
+    width: 100%;
+  }
+}
